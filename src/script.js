@@ -17,9 +17,8 @@ async function carregarTaxas(moeda) {
         if (data && data.result === "success" && data.rates) {
             taxas = data.rates
             preencherOpcoesMoedas(Object.keys(taxas))
-        } else {
+        } else
             exibirMensagemErro("Erro ao carregar as moedas. Tente novamente.")
-        }
     } catch (error) {
         exibirMensagemErro("Erro ao conectar com a API.")
     }
@@ -61,9 +60,8 @@ async function atualizarTaxa() {
     const taxaInfo = document.getElementById('taxaInfo')
 
     if (moedaOrigem && moedaDestino) {
-        if (moedaOrigem !== 'USD') {
+        if (moedaOrigem !== 'USD')
             await carregarTaxas(moedaOrigem)
-        }
 
         const taxa = taxas[moedaDestino] / taxas[moedaOrigem]
         if (taxa)
@@ -86,9 +84,8 @@ async function converterMoeda() {
         return
     }
 
-    if (moedaOrigem !== 'USD') {
+    if (moedaOrigem !== 'USD')
         await carregarTaxas(moedaOrigem)
-    }
 
     const taxa = taxas[moedaDestino] / taxas[moedaOrigem]
     if (taxa) {
