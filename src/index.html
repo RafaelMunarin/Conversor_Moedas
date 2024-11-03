@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Moedas</h1>
+        <input type="number" id="valor" placeholder="Digite o valor para conversão" />
+
+        <label for="moedaOrigem">Moeda de origem:</label>
+        <select id="moedaOrigem" onchange="atualizarTaxa()"></select>
+
+        <label for="moedaDestino">Moeda de destino:</label>
+        <select id="moedaDestino" onchange="atualizarTaxa()"></select>
+
+        <p id="taxaInfo">Taxa de câmbio: </p>
+
+        <button onclick="converterMoeda()">Converter</button>
+        <p id="resultado"></p>
+    </div>
+
+    <footer class="footer">
+        <p>Desenvolvido por: <strong>Rafael Munarin</strong></p>
+        <p>Dados fornecidos por: <a href="https://www.exchangerate-api.com" target="_blank">API de taxas por taxa de câmbio</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
