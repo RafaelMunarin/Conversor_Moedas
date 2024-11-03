@@ -50,7 +50,7 @@ const exibirMensagemErro = (mensagem) => {
     resultado.style.color = 'red'
 }
 
-const validarEntrada = (valor) => {
+const validarValorEntrada = (valor) => {
     return !isNaN(valor) && valor > 0
 }
 
@@ -71,7 +71,7 @@ async function atualizarTaxa() {
     }
 }
 
-const calcularConversao = (valor, taxa) => (valor * taxa).toFixed(2) 
+const calcularConversaoMoeda = (valor, taxa) => (valor * taxa).toFixed(2) 
 
 async function converterMoeda() {
     const valor = parseFloat(document.getElementById('valor').value)
@@ -79,7 +79,7 @@ async function converterMoeda() {
     const moedaDestino = document.getElementById('moedaDestino').value
     const resultado = document.getElementById('resultado')
 
-    if (!validarEntrada(valor)) {
+    if (!validarValorEntrada(valor)) {
         exibirMensagemErro("Por favor, insira um valor válido.")
         return
     }
@@ -89,7 +89,7 @@ async function converterMoeda() {
 
     const taxa = taxas[moedaDestino] / taxas[moedaOrigem]
     if (taxa) {
-        const valorConvertido = calcularConversao(valor, taxa)
+        const valorConvertido = calcularConversaoMoeda(valor, taxa)
         resultado.textContent = `${valor} ${moedaOrigem} = ${valorConvertido} ${moedaDestino}`
         resultado.style.color = 'black'
     } else {
