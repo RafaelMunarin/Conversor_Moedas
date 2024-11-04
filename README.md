@@ -53,4 +53,4 @@ const validarEntrada = (valor) => !isNaN(valor) && valor > 0
 
 ## API
 
-Os dados de câmbio utilizados nesta aplicação são fornecidos pela [API de taxas por taxa de câmbio](https://www.exchangerate-api.com). A atribuição é necessária nas páginas que utilizam essas taxas.
+Os dados de câmbio utilizados nesta aplicação são fornecidos pela [API de taxas por taxa de câmbio](https://www.exchangerate-api.com).
